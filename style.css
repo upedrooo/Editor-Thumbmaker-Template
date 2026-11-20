@@ -1,4 +1,4 @@
-/* ================= FONTES ================= */
+/* ================= FONTS ================= */
 @font-face {
     font-family: 'Providence';
     src: url('fonts/Providence Sans Regular.ttf') format('truetype');
@@ -7,7 +7,7 @@
     font-display: swap;
 }
 
-/* Fontes extras disponíveis na pasta fonts/ (não são usadas) */
+/* Extra fonts bundled in fonts/ (currently unused) */
 @font-face {
     font-family: 'ACRealAdult';
     src: url('fonts/ACRealAdult.ttf') format('truetype');
@@ -24,7 +24,7 @@
     font-display: swap;
 }
 
-/* ================= RESET E VARIÁVEIS ================= */
+/* ================= RESET & VARIABLES ================= */
 * {
     margin: 0;
     padding: 0;
@@ -32,18 +32,18 @@
 }
 
 :root {
-    /* Cores */
+    /* Colors */
     --bg-color: #050505;
     --text-color: #ffffff;
     --text-muted: #c4c4c4;
     --accent-color: #ffffff;
     --green: #27ae60;
 
-    /* Formas */
+    /* Radii */
     --radius-card: 15px;
     --radius-pill: 50px;
 
-    /* Sombras: duas camadas combinadas (contorno forte + esfumaçado) */
+    /* Shadows: two stacked layers (crisp edge + soft glow) */
     --text-glow: 0 2px 4px rgba(0, 0, 0, 1), 0 5px 15px rgba(0, 0, 0, 0.8);
     --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.8), 0 5px 15px rgba(0, 0, 0, 0.5);
 }
@@ -60,7 +60,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Trava a rolagem enquanto a tela de loading está ativa */
+/* Lock scrolling while the preloader is active */
 body.loading-active {
     overflow: hidden;
 }
@@ -69,40 +69,40 @@ img {
     display: block;
 }
 
-/* Sombra nos textos principais para garantir a leitura sobre o fundo */
-.nome,
-.descricao,
-.titulo-portfolio h2,
-.categoria h3,
+/* Text shadow on primary copy to preserve legibility over the background */
+.name,
+.description,
+.portfolio-title h2,
+.category h3,
 .commissions-widget,
-.titulo-contato,
-.subtitulo-contato,
+.contact-title,
+.contact-subtitle,
 footer {
     text-shadow: var(--text-glow);
 }
 
-/* ================= BACKGROUND FIXO ================= */
+/* ================= FIXED BACKGROUND ================= */
 .bg-fixed {
     position: fixed;
     inset: 0;
-    background-image: url('media/bg.jpeg'); /* Imagem do PC */
+    background-image: url('media/bg.jpeg'); /* Desktop background */
     background-size: cover;
     background-position: center;
-    z-index: -10; /* Fica atrás de absolutamente tudo */
-    pointer-events: none; /* Não atrapalha os cliques do site */
+    z-index: -10; /* Stays behind all page content */
+    pointer-events: none; /* Never intercepts clicks */
 }
 
-/* Película escura por cima da imagem de fundo */
+/* Dark scrim layered over the background image */
 .bg-fixed::after {
     content: '';
     position: absolute;
     inset: 0;
-    /* Aumente o 0.4 para escurecer (ex: 0.6) ou diminua para clarear (ex: 0.2) */
+    /* Raise 0.4 to darken (e.g., 0.6) or lower to lighten (e.g., 0.2) */
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* ================= PERFIL ================= */
-.perfil {
+/* ================= PROFILE ================= */
+.profile {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,7 +110,7 @@ footer {
     padding: 80px 20px 40px;
 }
 
-.foto-container {
+.photo-container {
     width: 150px;
     height: 150px;
     padding: 5px;
@@ -119,14 +119,14 @@ footer {
     border-radius: 50%;
 }
 
-.foto-perfil {
+.profile-photo {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.nome {
+.name {
     font-size: 2.5rem;
     font-weight: 900;
     letter-spacing: 2px;
@@ -134,12 +134,12 @@ footer {
     margin-bottom: 20px;
 }
 
-.descricao {
+.description {
     max-width: 600px;
     font-size: 1.1rem;
 }
 
-/* ================= PORTFÓLIO ================= */
+/* ================= PORTFOLIO ================= */
 .portfolio {
     display: flex;
     flex-direction: column;
@@ -147,7 +147,7 @@ footer {
     padding: 40px 20px;
 }
 
-.titulo-portfolio h2 {
+.portfolio-title h2 {
     padding: 10px 40px;
     margin-bottom: 60px;
     border: 2px solid var(--accent-color);
@@ -156,14 +156,14 @@ footer {
     letter-spacing: 2px;
 }
 
-.categoria {
+.category {
     width: 100%;
     max-width: 900px;
     margin-bottom: 60px;
     text-align: center;
 }
 
-.categoria h3 {
+.category h3 {
     margin-bottom: 30px;
     font-size: 1.2rem;
     font-weight: 400;
@@ -181,7 +181,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1000px; /* Larga o suficiente para os 4 Shorts lado a lado */
+    max-width: 1000px; /* Wide enough to fit all 4 Shorts side by side */
     margin: 0 auto;
 }
 
@@ -206,7 +206,7 @@ footer {
     aspect-ratio: 9 / 16;
 }
 
-/* Capa clicável (botão) por cima do player, que só é criado após o clique */
+/* Clickable cover button sitting above the lazy-loaded player container */
 .video-overlay,
 .iframe-container {
     position: absolute;
@@ -255,8 +255,8 @@ footer {
     outline-offset: -6px;
 }
 
-/* ----- Botão de play vazado ----- */
-.play-btn-vazado {
+/* ----- Outline Play Button ----- */
+.play-btn-outline {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -268,29 +268,29 @@ footer {
     height: 70px;
     border: 4px solid #ffffff;
     border-radius: 50%;
-    background-color: transparent; /* Fundo vazado */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Não some em fundos claros */
+    background-color: transparent; /* Hollow background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Keeps contrast over light covers */
     transition: transform 0.2s;
 }
 
-/* Triângulo branco do play */
-.play-btn-vazado::after {
+/* White play triangle */
+.play-btn-outline::after {
     content: '';
     display: block;
-    margin-left: 8px; /* Ajuste óptico do centro */
+    margin-left: 8px; /* Optical centering */
     border-style: solid;
     border-width: 14px 0 14px 24px;
     border-color: transparent transparent transparent #ffffff;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-.video-overlay:hover .play-btn-vazado,
-.video-overlay:focus-visible .play-btn-vazado {
+.video-overlay:hover .play-btn-outline,
+.video-overlay:focus-visible .play-btn-outline {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* ================= CONTATO ================= */
-.contato {
+/* ================= CONTACT ================= */
+.contact {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -298,7 +298,7 @@ footer {
     text-align: center;
 }
 
-/* ----- Widget Commissions ----- */
+/* ----- Commissions Widget ----- */
 .commissions-widget {
     display: inline-flex;
     align-items: center;
@@ -335,20 +335,20 @@ footer {
     }
 }
 
-/* ----- Textos do contato ----- */
-.titulo-contato {
+/* ----- Contact Copy ----- */
+.contact-title {
     margin-bottom: 10px;
     font-size: 2.2rem;
     font-weight: 900;
 }
 
-.subtitulo-contato {
+.contact-subtitle {
     margin-bottom: 40px;
     font-size: 1rem;
     color: var(--text-muted);
 }
 
-/* ----- Ícones sociais ----- */
+/* ----- Social Icons ----- */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -385,10 +385,10 @@ footer {
     outline-offset: 3px;
 }
 
-/* ================= RODAPÉ ================= */
+/* ================= FOOTER ================= */
 footer {
     padding: 30px 20px 50px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil separando o fim do site */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider above footer */
     text-align: center;
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -404,19 +404,19 @@ footer .studio {
     opacity: 0.7;
 }
 
-/* ================= ANIMAÇÃO DE ENTRADA ================= */
+/* ================= SCROLL REVEAL ================= */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.fade-in.visivel {
+.fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* ================= TELA DE LOADING ================= */
+/* ================= LOADING SCREEN ================= */
 #preloader {
     position: fixed;
     inset: 0;
@@ -425,19 +425,19 @@ footer .studio {
     justify-content: center;
     background-color: var(--bg-color);
     z-index: 99999;
-    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1); /* Manter em sincronia com PRELOADER_EXIT_TIME no script.js */
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1); /* Keep in sync with PRELOADER_EXIT_TIME in script.js */
 }
 
 #preloader.slide-up {
     transform: translateY(-100%);
 }
 
-/* ----- Cubo 3D giratório ----- */
+/* ----- Spinning 3D Cube ----- */
 .spinner {
     width: 44px;
     height: 44px;
     transform-style: preserve-3d;
-    animation: spinner-cubo 2s infinite ease;
+    animation: spinner-cube 2s infinite ease;
 }
 
 .spinner > div {
@@ -445,7 +445,7 @@ footer .studio {
     width: 100%;
     height: 100%;
     border: 2px solid var(--accent-color);
-    background-color: rgba(255, 255, 255, 0.05); /* Deixa as paredes do cubo visíveis */
+    background-color: rgba(255, 255, 255, 0.05); /* Makes cube faces subtly visible */
 }
 
 .spinner div:nth-of-type(1) {
@@ -476,7 +476,7 @@ footer .studio {
     transform: translateZ(22px);
 }
 
-@keyframes spinner-cubo {
+@keyframes spinner-cube {
     0% {
         transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
     }
@@ -488,10 +488,10 @@ footer .studio {
     }
 }
 
-/* ================= RESPONSIVIDADE (MOBILE) ================= */
+/* ================= RESPONSIVE (MOBILE) ================= */
 @media (max-width: 768px) {
     .bg-fixed {
-        background-image: url('media/bg-mobile.jpeg'); /* Imagem do celular */
+        background-image: url('media/bg-mobile.jpeg'); /* Mobile background */
     }
 
     .grid-2x2 {
@@ -499,34 +499,34 @@ footer .studio {
     }
 
     .grid-shorts {
-        grid-template-columns: 1fr; /* Um Short embaixo do outro */
+        grid-template-columns: 1fr; /* Stack Shorts vertically */
         max-width: 350px;
     }
 
-    .descricao {
+    .description {
         font-size: 0.95rem;
     }
 
-    .nome {
+    .name {
         font-size: 2rem;
     }
 
-    .titulo-contato {
+    .contact-title {
         font-size: 1.8rem;
     }
 
-    .play-btn-vazado {
+    .play-btn-outline {
         width: 55px;
         height: 55px;
         border-width: 3px;
     }
 
-    .play-btn-vazado::after {
+    .play-btn-outline::after {
         border-width: 10px 0 10px 18px;
     }
 }
 
-/* ================= ACESSIBILIDADE: MENOS MOVIMENTO ================= */
+/* ================= ACCESSIBILITY: REDUCED MOTION ================= */
 @media (prefers-reduced-motion: reduce) {
     .fade-in {
         opacity: 1;
@@ -541,7 +541,7 @@ footer .studio {
 
     #preloader,
     .social-icons a,
-    .play-btn-vazado {
+    .play-btn-outline {
         transition: none;
     }
 

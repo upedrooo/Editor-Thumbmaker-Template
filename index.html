@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de edição de vídeo: vídeos longos, shorts e thumbnails.">
+    <meta name="description" content="Video editing portfolio: long-form videos, shorts, and thumbnails.">
     <meta name="theme-color" content="#050505">
-    <title>Portfólio de Edição</title>
+    <title>Video Editing Portfolio</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 
-    <!-- Sem JavaScript: não trava o site na tela de loading nem esconde o conteúdo -->
+    <!-- No JavaScript fallback: avoid locking the page on the preloader or hiding content -->
     <noscript>
         <style>
             #preloader { display: none; }
@@ -24,7 +24,7 @@
 
     <div class="bg-fixed"></div>
 
-    <!-- TELA PRETA DE LOADING -->
+    <!-- LOADING OVERLAY -->
     <div id="preloader" aria-hidden="true">
         <div class="spinner">
             <div></div>
@@ -36,61 +36,61 @@
         </div>
     </div>
 
-    <!-- SEÇÃO: PERFIL -->
-    <section class="perfil fade-in">
-        <div class="foto-container">
-            <img src="media/perfil.jpg" alt="Foto de Perfil" class="foto-perfil">
+    <!-- SECTION: PROFILE -->
+    <section class="profile fade-in">
+        <div class="photo-container">
+            <img src="media/profile.jpg" alt="Profile Photo" class="profile-photo">
         </div>
-        <h1 class="nome">Pedro Silva</h1>
-        <p class="descricao">
-            I'm 25 years old and i work with long and short videos,<br>
-            always striving for quality, pace and impact<br>
-            I am constantly evolving and open to opportunities,<br>
+        <h1 class="name">Pedro Silva</h1>
+        <p class="description">
+            I'm 25 years old and I work with long and short videos,<br>
+            always striving for quality, pace, and impact.<br>
+            I am constantly evolving and open to opportunities<br>
             to grow professionally.
         </p>
     </section>
 
-    <!-- SEÇÃO: PORTFÓLIO -->
+    <!-- SECTION: PORTFOLIO -->
     <section class="portfolio">
-        <div class="titulo-portfolio fade-in">
+        <div class="portfolio-title fade-in">
             <h2>PORTFOLIO</h2>
         </div>
 
         <!--
-            Como funciona cada vídeo:
-            - data-video-id = ID do vídeo no YouTube (o código no final do link)
-            - a imagem dentro do botão é a capa exibida antes do play
+            How each video card works:
+            - data-video-id = YouTube video ID (the code at the end of the video URL)
+            - the image inside the button is the cover shown before playback starts
         -->
 
-        <!-- VÍDEOS LONGOS -->
-        <div class="categoria fade-in">
+        <!-- LONG VIDEOS -->
+        <div class="category fade-in">
             <h3>LONG VIDEOS</h3>
             <div class="grid-2x2">
                 <div class="video-card">
-                    <button type="button" class="video-overlay" data-video-id="SZKalHAfhU4" aria-label="Reproduzir vídeo longo 1">
-                        <img src="media/longo1.jpg" alt="" loading="lazy" decoding="async">
-                        <span class="play-btn-vazado" aria-hidden="true"></span>
+                    <button type="button" class="video-overlay" data-video-id="SZKalHAfhU4" aria-label="Play long video 1">
+                        <img src="media/long1.jpg" alt="" loading="lazy" decoding="async">
+                        <span class="play-btn-outline" aria-hidden="true"></span>
                     </button>
                     <div class="iframe-container"></div>
                 </div>
                 <div class="video-card">
-                    <button type="button" class="video-overlay" data-video-id="-lHeN6hjt5I" aria-label="Reproduzir vídeo longo 2">
-                        <img src="media/longo2.jpg" alt="" loading="lazy" decoding="async">
-                        <span class="play-btn-vazado" aria-hidden="true"></span>
+                    <button type="button" class="video-overlay" data-video-id="-lHeN6hjt5I" aria-label="Play long video 2">
+                        <img src="media/long2.jpg" alt="" loading="lazy" decoding="async">
+                        <span class="play-btn-outline" aria-hidden="true"></span>
                     </button>
                     <div class="iframe-container"></div>
                 </div>
                 <div class="video-card">
-                    <button type="button" class="video-overlay" data-video-id="ynpTrOt254Q" aria-label="Reproduzir vídeo longo 3">
-                        <img src="media/longo3.jpeg" alt="" loading="lazy" decoding="async">
-                        <span class="play-btn-vazado" aria-hidden="true"></span>
+                    <button type="button" class="video-overlay" data-video-id="ynpTrOt254Q" aria-label="Play long video 3">
+                        <img src="media/long3.jpeg" alt="" loading="lazy" decoding="async">
+                        <span class="play-btn-outline" aria-hidden="true"></span>
                     </button>
                     <div class="iframe-container"></div>
                 </div>
                 <div class="video-card">
-                    <button type="button" class="video-overlay" data-video-id="gcHh78kLXpA" aria-label="Reproduzir vídeo longo 4">
-                        <img src="media/longo4.jpeg" alt="" loading="lazy" decoding="async">
-                        <span class="play-btn-vazado" aria-hidden="true"></span>
+                    <button type="button" class="video-overlay" data-video-id="gcHh78kLXpA" aria-label="Play long video 4">
+                        <img src="media/long4.jpeg" alt="" loading="lazy" decoding="async">
+                        <span class="play-btn-outline" aria-hidden="true"></span>
                     </button>
                     <div class="iframe-container"></div>
                 </div>
@@ -98,34 +98,34 @@
         </div>
 
         <!-- SHORTS -->
-        <div class="categoria fade-in">
+        <div class="category fade-in">
             <h3>SHORTS</h3>
             <div class="grid-shorts">
                 <div class="short-card">
-                    <button type="button" class="video-overlay" data-video-id="BBjZoYEQxRo" aria-label="Reproduzir Short 1">
+                    <button type="button" class="video-overlay" data-video-id="BBjZoYEQxRo" aria-label="Play Short 1">
                         <img src="media/short1.jpeg" alt="" loading="lazy" decoding="async">
-                        <span class="play-btn-vazado" aria-hidden="true"></span>
+                        <span class="play-btn-outline" aria-hidden="true"></span>
                     </button>
                     <div class="iframe-container"></div>
                 </div>
                 <div class="short-card">
-                    <button type="button" class="video-overlay" data-video-id="JS1x0Cx2ETU" aria-label="Reproduzir Short 2">
+                    <button type="button" class="video-overlay" data-video-id="JS1x0Cx2ETU" aria-label="Play Short 2">
                         <img src="media/short2.jpg" alt="" loading="lazy" decoding="async">
-                        <span class="play-btn-vazado" aria-hidden="true"></span>
+                        <span class="play-btn-outline" aria-hidden="true"></span>
                     </button>
                     <div class="iframe-container"></div>
                 </div>
                 <div class="short-card">
-                    <button type="button" class="video-overlay" data-video-id="EUHEzJlhzhQ" aria-label="Reproduzir Short 3">
+                    <button type="button" class="video-overlay" data-video-id="EUHEzJlhzhQ" aria-label="Play Short 3">
                         <img src="media/short3.jpeg" alt="" loading="lazy" decoding="async">
-                        <span class="play-btn-vazado" aria-hidden="true"></span>
+                        <span class="play-btn-outline" aria-hidden="true"></span>
                     </button>
                     <div class="iframe-container"></div>
                 </div>
                 <div class="short-card">
-                    <button type="button" class="video-overlay" data-video-id="0j7PWRYCA38" aria-label="Reproduzir Short 4">
+                    <button type="button" class="video-overlay" data-video-id="0j7PWRYCA38" aria-label="Play Short 4">
                         <img src="media/short4.jpeg" alt="" loading="lazy" decoding="async">
-                        <span class="play-btn-vazado" aria-hidden="true"></span>
+                        <span class="play-btn-outline" aria-hidden="true"></span>
                     </button>
                     <div class="iframe-container"></div>
                 </div>
@@ -133,7 +133,7 @@
         </div>
 
         <!-- THUMBNAILS -->
-        <div class="categoria fade-in">
+        <div class="category fade-in">
             <h3>THUMBNAILS</h3>
             <div class="grid-2x2">
                 <div class="thumb-card"><img src="media/thumb1.png" alt="Thumbnail 1" loading="lazy" decoding="async"></div>
@@ -144,19 +144,19 @@
         </div>
     </section>
 
-    <!-- SEÇÃO: CONTATO -->
-    <section class="contato fade-in">
+    <!-- SECTION: CONTACT -->
+    <section class="contact fade-in">
 
-        <!-- WIDGET COMMISSIONS -->
+        <!-- COMMISSIONS WIDGET -->
         <div class="commissions-widget">
             <span class="dot" aria-hidden="true"></span>
             <span>COMMISSIONS: ON</span>
         </div>
 
-        <h2 class="titulo-contato">LET'S WORK TOGETHER!</h2>
-        <p class="subtitulo-contato">CONTACT ME AND LET'S MAKE IT HAPPEN.</p>
+        <h2 class="contact-title">LET'S WORK TOGETHER!</h2>
+        <p class="contact-subtitle">CONTACT ME AND LET'S MAKE IT HAPPEN.</p>
 
-        <!-- ÍCONES SOCIAIS -->
+        <!-- SOCIAL ICONS -->
         <div class="social-icons">
             <!-- Instagram -->
             <a href="https://www.instagram.com/pfiuz" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -177,9 +177,9 @@
         </div>
     </section>
 
-    <!-- RODAPÉ -->
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Pedro - Todos os direitos reservados.</p>
+        <p>© 2026 Pedro - All rights reserved.</p>
         <p class="studio">A FALL Studios® Creation</p>
     </footer>
 

@@ -1,211 +1,211 @@
-# 🎬 Portfólio para Editor de Vídeo
+# 🎬 Video Editor & Thumbmaker Portfolio Template
 
-Uma página web de portfólio simples e objetiva, feita para editores de vídeo mostrarem seu trabalho. Feita apenas com **HTML, CSS e JavaScript puro** — sem frameworks, sem instalação de dependências e sem etapa de build. É só abrir e usar.
+A clean, straightforward portfolio webpage built for video editors and thumbnail designers to showcase their work. Made with pure **HTML, CSS, and JavaScript** — no frameworks, no dependencies, and no build step. Just open and customize.
 
-## ✨ O que a página tem
+## ✨ Features
 
-- **Tela de loading** com um cubo 3D girando, que "sobe" e revela o site.
-- **Perfil**: foto, nome e uma breve descrição.
-- **Portfólio** dividido em três categorias:
-  - **Long Videos** — 4 vídeos horizontais (16:9) do YouTube.
-  - **Shorts** — 4 vídeos verticais (9:16) do YouTube.
-  - **Thumbnails** — 4 imagens.
-- **Vídeos com carregamento sob demanda**: a página mostra só a capa com um botão de play. O player do YouTube só é carregado quando o visitante clica, o que deixa o site mais leve e rápido.
-- **Selo "Commissions: ON"** indicando que você está aceitando trabalhos.
-- **Seção de contato** com ícones para Instagram, X (Twitter), LinkedIn e e-mail.
-- **Animações de entrada** conforme o visitante rola a página.
-- **Responsivo**: layout e imagem de fundo próprios para celular.
+- **Loading screen** featuring a spinning 3D cube that slides up to reveal the page.
+- **Profile section**: photo, name, and short bio.
+- **Portfolio** organized into three categories:
+  - **Long Videos** — 4 horizontal (16:9) YouTube videos.
+  - **Shorts** — 4 vertical (9:16) YouTube Shorts.
+  - **Thumbnails** — 4 showcase images.
+- **On-demand video embeds**: the page displays only a cover image and play button until clicked, loading the YouTube iframe lazily so the page stays fast and lightweight.
+- **"Commissions: ON" badge** showing whether you are open for work.
+- **Contact section** with icon links for Instagram, X (Twitter), LinkedIn, and email.
+- **Scroll reveal animations** as visitors scroll down the page.
+- **Responsive design**: dedicated mobile layout and mobile background image.
 
-## 📁 Estrutura do projeto
+## 📁 Project Structure
 
 ```
-editor/
-├── index.html      → Conteúdo da página (textos, vídeos, links)
-├── style.css       → Aparência (cores, fontes, layout, animações)
-├── script.js       → Comportamento (loading, animações, player do YouTube)
-├── favicon.ico     → Ícone da aba do navegador
-├── fonts/          → Fontes usadas no site
-└── media/          → Imagens: perfil, fundos, capas de vídeos e thumbnails
+Editor-Thumbmaker-Template/
+├── index.html      → Page content (copy, videos, links)
+├── style.css       → Styling (colors, fonts, layout, animations)
+├── script.js       → Behavior (preloader, scroll animations, YouTube player)
+├── favicon.ico     → Browser tab icon
+├── fonts/          → Custom fonts used on the site
+└── media/          → Images: profile photo, backgrounds, video covers, and thumbnails
 ```
 
-## 🚀 Como usar
+## 🚀 Getting Started
 
-1. **Baixe o projeto**: clique em **Code → Download ZIP** aqui no GitHub e extraia a pasta (ou use `git clone`).
-2. **Abra o `index.html`** no navegador.
+1. **Download the project**: click **Code → Download ZIP** here on GitHub and extract the folder (or run `git clone`).
+2. **Open `index.html`** in your browser.
 
-> **⚠️ Dica importante:** alguns navegadores bloqueiam ou dão erro nos vídeos do YouTube quando a página é aberta direto do arquivo (`file://`). Se os vídeos não carregarem, rode um servidor local:
-> - No **VS Code**, instale a extensão **Live Server**, clique com o botão direito no `index.html` e escolha **Open with Live Server**; ou
-> - Com Python instalado, abra o terminal na pasta do projeto e rode `python -m http.server 8000`, depois acesse `http://localhost:8000`.
+> **⚠️ Important tip:** some browsers block or throw errors on YouTube embeds when opening a page directly from disk (`file://`). If videos fail to play, serve the folder over a local server:
+> - In **VS Code**, install the **Live Server** extension, right-click `index.html`, and choose **Open with Live Server**; or
+> - With Python installed, open a terminal in the project folder, run `python -m http.server 8000`, and visit `http://localhost:8000`.
 
-## 🛠️ Como personalizar
+## 🛠️ How to Customize
 
-Toda a personalização acontece em três lugares: o `index.html` (conteúdo), a pasta `media/` (imagens) e o `style.css` (visual). Você não precisa mexer no `script.js` para o uso normal.
+All customization lives in three places: `index.html` (content), the `media/` folder (images), and `style.css` (look and feel). You don't need to touch `script.js` for typical use.
 
-### 1. Perfil (foto, nome e descrição)
+### 1. Profile (photo, name, and bio)
 
-No `index.html`, procure a seção `<!-- SEÇÃO: PERFIL -->`:
+In `index.html`, find the `<!-- SECTION: PROFILE -->` block:
 
 ```html
-<img src="media/perfil.jpg" alt="Foto de Perfil" class="foto-perfil">
-<h1 class="nome">Seu Nome</h1>
-<p class="descricao">
-    Sua descrição aqui,<br>
-    use &lt;br&gt; para quebrar a linha.
+<img src="media/profile.jpg" alt="Profile Photo" class="profile-photo">
+<h1 class="name">Your Name</h1>
+<p class="description">
+    Your bio goes here,<br>
+    use &lt;br&gt; for line breaks.
 </p>
 ```
 
-- Para trocar a foto, substitua o arquivo `media/perfil.jpg` por uma imagem sua **com o mesmo nome**, ou altere o `src` para o novo nome.
-- Use uma foto **quadrada** para o melhor resultado (ela é exibida dentro de um círculo).
+- To swap the photo, replace `media/profile.jpg` with your own image **using the same filename**, or update the `src` attribute.
+- Use a **square** image for best results (it is cropped into a circle).
 
-### 2. Vídeos longos e Shorts
+### 2. Long Videos and Shorts
 
-Os vídeos vêm do **YouTube**. Cada vídeo usa o **ID** dele, que é o código no final do link:
+Videos are embedded from **YouTube** using each video's **ID** — the code at the end of the URL:
 
 ```
 https://www.youtube.com/watch?v=SZKalHAfhU4
-                                └── este é o ID
+                                └── this is the ID
 ```
 
-Para Shorts, o link é `https://www.youtube.com/shorts/BBjZoYEQxRo` — o ID é o código depois de `/shorts/`.
+For Shorts (`https://www.youtube.com/shorts/BBjZoYEQxRo`), the ID is the code after `/shorts/`.
 
-No `index.html`, cada vídeo é um bloco assim:
+In `index.html`, each video uses this markup:
 
 ```html
 <div class="video-card">
-    <button type="button" class="video-overlay" data-video-id="SZKalHAfhU4" aria-label="Reproduzir vídeo longo 1">
-        <img src="media/longo1.jpg" alt="" loading="lazy" decoding="async">
-        <span class="play-btn-vazado" aria-hidden="true"></span>
+    <button type="button" class="video-overlay" data-video-id="SZKalHAfhU4" aria-label="Play long video 1">
+        <img src="media/long1.jpg" alt="" loading="lazy" decoding="async">
+        <span class="play-btn-outline" aria-hidden="true"></span>
     </button>
     <div class="iframe-container"></div>
 </div>
 ```
 
-Para trocar um vídeo, mude **duas coisas**:
+To replace a video, change **two things**:
 
-1. O ID no atributo `data-video-id="..."`.
-2. A imagem de capa (`src="media/longo1.jpg"`) — substitua o arquivo em `media/` ou aponte para outro.
+1. The ID inside `data-video-id="..."`.
+2. The cover image (`src="media/long1.jpg"`) — replace the file in `media/` or point to a new one.
 
-O `script.js` cuida do resto sozinho: qualquer botão com `data-video-id` abre o player do YouTube no clique.
+`script.js` handles everything else automatically: any button with `data-video-id` loads the YouTube player on click.
 
-Os Shorts funcionam do mesmo jeito (blocos `short-card`, com capas `short1` a `short4`).
+Shorts work the exact same way (`short-card` blocks using `short1` through `short4`).
 
-**Adicionar mais vídeos:** copie um bloco inteiro (`video-card` ou `short-card`) e cole logo abaixo, dentro do mesmo `grid`. Longos ficam em 2 colunas e Shorts em 4 colunas (1 coluna no celular).
+**Adding more videos:** duplicate an entire `video-card` or `short-card` block inside the same grid. Long videos render in 2 columns and Shorts in 4 columns (1 column on mobile).
 
-**Remover um vídeo:** apague o bloco correspondente.
+**Removing a video:** delete its card block.
 
-> 💡 Sobre as capas: você pode usar a própria thumbnail do YouTube ou uma imagem criada por você. Prefira imagens 16:9 para os longos e 9:16 para os Shorts — elas são cortadas automaticamente para preencher o card.
+> 💡 About cover images: you can use the YouTube thumbnail itself or a custom graphic. Use 16:9 images for long videos and 9:16 for Shorts — they are automatically cropped to fill the card.
 
 ### 3. Thumbnails
 
-Na seção `<!-- THUMBNAILS -->`, cada thumbnail é só uma imagem:
+Under `<!-- THUMBNAILS -->`, each thumbnail is a simple image card:
 
 ```html
 <div class="thumb-card"><img src="media/thumb1.png" alt="Thumbnail 1"></div>
 ```
 
-Substitua os arquivos `thumb1.png` a `thumb4.png` em `media/` pelos seus, ou copie/apague linhas para ter mais ou menos thumbnails.
+Replace `thumb1.png` through `thumb4.png` in `media/` with your own work, or add/remove lines to change the count.
 
-### 4. Contato e redes sociais
+### 4. Contact & Social Links
 
-Na seção `<!-- SEÇÃO: CONTATO -->`, altere os links nos ícones:
+In `<!-- SECTION: CONTACT -->`, update the links on each icon:
 
 ```html
-<a href="https://www.instagram.com/SEU_USUARIO" target="_blank" aria-label="Instagram">
-<a href="https://x.com/SEU_USUARIO" target="_blank" aria-label="X">
-<a href="https://www.linkedin.com/in/SEU_PERFIL/" target="_blank" aria-label="LinkedIn">
-<a href="mailto:seuemail@exemplo.com" target="_blank" aria-label="Email">
+<a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" aria-label="Instagram">
+<a href="https://x.com/YOUR_HANDLE" target="_blank" aria-label="X">
+<a href="https://www.linkedin.com/in/YOUR_PROFILE/" target="_blank" aria-label="LinkedIn">
+<a href="mailto:you@example.com" aria-label="Email">
 ```
 
-Para remover uma rede, apague o bloco `<a>...</a>` dela inteiro (incluindo o `<svg>`).
+To remove a platform, delete its entire `<a>...</a>` block (including the `<svg>`).
 
-### 5. Selo "Commissions"
+### 5. "Commissions" Badge
 
-Para indicar que você **não** está aceitando trabalhos, altere o texto `COMMISSIONS: ON` para `COMMISSIONS: OFF` no `index.html`. Se quiser, mude também a cor da bolinha no `style.css`, na regra `.dot` (o verde é `#27ae60`).
+To indicate that you are **not** currently taking work, change `COMMISSIONS: ON` to `COMMISSIONS: OFF` in `index.html`. You can also adjust the status dot color in `style.css` under `.dot` (green is `#27ae60`, via `--green`).
 
-### 6. Textos, título da aba e rodapé
+### 6. Copy, Tab Title, and Footer
 
-No `index.html`:
+In `index.html`:
 
-- **Título da aba do navegador:** a tag `<title>Portfólio de Edição</title>` no topo.
-- **Títulos das seções e chamada de contato:** `PORTFOLIO`, `LONG VIDEOS`, `SHORTS`, `THUMBNAILS`, `LET'S WORK TOGETHER!` etc. — é só editar o texto.
-- **Rodapé:** no final do arquivo, ajuste o copyright e **remova ou troque a linha `A FALL Studios® Creation`**, que é um crédito do autor original.
+- **Browser tab title:** update `<title>Video Editing Portfolio</title>` in `<head>`.
+- **Section headings & CTA:** `PORTFOLIO`, `LONG VIDEOS`, `SHORTS`, `THUMBNAILS`, `LET'S WORK TOGETHER!`, etc. — edit directly in the HTML.
+- **Footer:** at the bottom of the file, update the copyright notice and **remove or replace the `A FALL Studios® Creation` line**, which credits the original creator.
 
-### 7. Cores
+### 7. Colors
 
-No topo do `style.css`, as cores principais ficam em variáveis:
+The main palette lives in CSS variables at the top of `style.css`:
 
 ```css
 :root {
-    --bg-color: #050505;    /* fundo escuro (e da tela de loading) */
-    --text-color: #ffffff;  /* cor dos textos */
-    --text-muted: #c4c4c4;  /* textos secundários */
-    --accent-color: #ffffff;/* bordas e detalhes */
+    --bg-color: #050505;    /* dark background (and preloader) */
+    --text-color: #ffffff;  /* primary text color */
+    --text-muted: #c4c4c4;  /* secondary text color */
+    --accent-color: #ffffff;/* borders and accents */
 }
 ```
 
-Mudando esses valores, o site inteiro acompanha.
+Updating these variables updates the whole site.
 
-### 8. Imagem de fundo
+### 8. Background Image
 
-- **Computador:** substitua `media/bg.jpeg`.
-- **Celular:** substitua `media/bg-mobile.jpeg` (usada em telas de até 768px).
+- **Desktop:** replace `media/bg.jpeg`.
+- **Mobile:** replace `media/bg-mobile.jpeg` (used on screens up to 768px wide).
 
-Para deixar o fundo mais escuro ou mais claro, ajuste o valor de opacidade no `style.css`, na regra `.bg-fixed::after`:
+To darken or lighten the background overlay, tweak the opacity in `style.css` under `.bg-fixed::after`:
 
 ```css
-background-color: rgba(0, 0, 0, 0.4); /* 0.6 = mais escuro | 0.2 = mais claro */
+background-color: rgba(0, 0, 0, 0.4); /* 0.6 = darker | 0.2 = lighter */
 ```
 
-### 9. Fontes
+### 9. Fonts
 
-As fontes ficam na pasta `fonts/` e são carregadas pelas regras `@font-face` no início do `style.css`. A fonte usada em todo o site é a **Providence**. As fontes `ACRealAdult` e `Network` estão declaradas, mas não são usadas no momento.
+Fonts live in `fonts/` and are loaded via `@font-face` rules at the top of `style.css`. The active typeface across the page is **Providence**. `ACRealAdult` and `Network` are declared as extras but unused by default.
 
-Para trocar, coloque sua fonte (`.ttf`) em `fonts/`, declare-a com `@font-face` e altere o `font-family` da regra `body`:
+To switch fonts, drop your `.ttf` file into `fonts/`, declare it with `@font-face`, and update `font-family` on `body`:
 
 ```css
 body {
-    font-family: 'SuaFonte', sans-serif;
+    font-family: 'YourFont', sans-serif;
 }
 ```
 
-### 10. Tempo da tela de loading
+### 10. Preloader Duration
 
-No topo do `script.js`, a constante `PRELOADER_DELAY` (em milissegundos) define por quanto tempo o cubo gira antes da página aparecer:
+At the top of `script.js`, `PRELOADER_DELAY` (in milliseconds) controls how long the cube spins before revealing the page:
 
 ```js
 const PRELOADER_DELAY = 1500;
 ```
 
-Diminua para uma entrada mais rápida ou aumente para uma abertura mais longa. Para remover a tela de loading, apague o bloco `<div id="preloader">` do `index.html`.
+Lower it for a snappier entry or raise it for a longer intro. To remove the preloader altogether, delete `<div id="preloader">...</div>` from `index.html`.
 
-## 🌐 Como publicar o seu site (GitHub Pages)
+## 🌐 Deploying Your Site (GitHub Pages)
 
-Depois de personalizar, você pode colocar a página no ar gratuitamente:
+Once customized, you can host the portfolio for free:
 
-1. Envie os arquivos do projeto para um repositório seu no GitHub (com o `index.html` na raiz).
-2. No repositório, vá em **Settings → Pages**.
-3. Em **Source**, escolha **Deploy from a branch**, selecione a branch `main` e a pasta `/ (root)`, e clique em **Save**.
-4. Aguarde alguns minutos: seu site ficará disponível em `https://seu-usuario.github.io/nome-do-repositorio/`.
+1. Push the project files to your own GitHub repository (with `index.html` at the root).
+2. Open **Settings → Pages** in your repository.
+3. Under **Source**, choose **Deploy from a branch**, pick `main` and `/ (root)`, and click **Save**.
+4. Wait a few minutes: your site will go live at `https://your-username.github.io/your-repo-name/`.
 
-Outras opções gratuitas que funcionam do mesmo jeito para sites estáticos: **Netlify**, **Vercel** e **Cloudflare Pages**.
+Other free static hosts that work out of the box: **Netlify**, **Vercel**, and **Cloudflare Pages**.
 
-## ⚠️ Antes de publicar como seu
+## ⚠️ Before Publishing as Your Own
 
-Este projeto contém o conteúdo pessoal do autor. Ao usar como base, **troque tudo o que for pessoal**:
+This template ships with the author's sample content. Before going live, **replace all personal assets and details**:
 
-- Nome, descrição, foto de perfil e links de contato (Instagram, X, LinkedIn e e-mail);
-- Os vídeos do YouTube e suas capas, e as thumbnails;
-- O texto de copyright e o crédito no rodapé;
-- As imagens de fundo, se não forem suas.
+- Name, bio, profile photo, and contact links (Instagram, X, LinkedIn, email);
+- YouTube video IDs, cover images, and thumbnails;
+- Copyright line and studio credit in the footer;
+- Background images, if you prefer your own.
 
-As **fontes** em `fonts/` podem ter licenças próprias (algumas são versões gratuitas com uso restrito). Confira a licença de cada uma antes de usar em um projeto comercial.
+The **fonts** in `fonts/` may carry their own licenses (some free versions restrict commercial use). Check each font's license before using it commercially.
 
-## 🧰 Tecnologias
+## 🧰 Built With
 
 - HTML5
-- CSS3 (Grid, Flexbox, animações e variáveis CSS)
-- JavaScript (Intersection Observer para as animações de rolagem)
-- YouTube Embed (player carregado apenas no clique)
+- CSS3 (Grid, Flexbox, animations, and custom properties)
+- Vanilla JavaScript (Intersection Observer for scroll reveal animations)
+- YouTube Embed (lazy-loaded iframe on click)
 
 ---
 
